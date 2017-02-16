@@ -1,1 +1,2 @@
-测试数据,这是一份上传到Github的说明文档
+ 这是一个基于ThinkCMF的简单框架
+ 使用PHPStudy的集成环境

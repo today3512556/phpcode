@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>计费规则</title>
+    <!-- HTML5 shim for IE8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+
+    <link href="__ROOT__/statics/simpleboot/themes/{:C('SP_ADMIN_STYLE')}/theme.min.css" rel="stylesheet">
+    <link href="__ROOT__/statics/simpleboot/css/simplebootadmin.css" rel="stylesheet">
+    <link href="__ROOT__/statics/js/artDialog/skins/default.css" rel="stylesheet" />
+    <link href="__ROOT__/statics/simpleboot/font-awesome/4.2.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+    <style>
+        .length_3{width: 180px;}
+        form .input-order{margin-bottom: 0px;padding:3px;width:40px;}
+        .table-actions{margin-top: 5px; margin-bottom: 5px;padding:0px;}
+        .table-list{margin-bottom: 0px;}
+    </style>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="__ROOT__/statics/simpleboot/font-awesome/4.2.0/css/font-awesome-ie7.min.css">
+    <![endif]-->
+</head>
+<body>
+<div class="wrap">
+    <div id="home_toptip"></div>
+    <div class="home_info">
+        <table class="table table-hover ">
+
+            <tbody>
+                <tr style="border: 0px;">
+                    <td style="border: 0px;color: #e6bb0d;width:60px;">拼座约车：</td>
+                    <td  style="border: 0px;">按单程价格乘以人数计算</td>
+                </tr>
+                <tr style="border: 0px;">
+                    <td style="border: 0px;color: #e6bb0d">城际专车：</td>
+                    <td  style="border: 0px;">有4座包车和7座包车，按单程价格的优惠百分比乘以车型人数计算包专线价格。</td>
+                </tr>
+                <tr style="border: 0px;">
+                    <td style="border: 0px;color: #e6bb0d">计时包车：</td>
+                    <td  style="border: 0px;">4座车和7座车，包天天数乘以车型价格计算出总价</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5 style="text-align:center">其他规则说明</h5>
+        <table class="table table-hover ">
+
+            <tbody>
+            <tr style="border: 0px;">
+                <td style="border: 0px;width:60px;">车型说明：</td>
+                <td  style="border: 0px;">平台有4座车和7座车两种车型</td>
+            </tr>
+            <tr style="border: 0px;">
+                <td style="border: 0px;">其他费用：</td>
+                <td  style="border: 0px;">包专线和包天车高速费、过路桥费用，由乘客另行现金支付。</td>
+            </tr>
+            <tr style="border: 0px;">
+                <td style="border: 0px;">感谢费：</td>
+                <td  style="border: 0px;">乘客可以自主增加感谢费，提高接单成功率</td>
+            </tr>
+            <tr style="border: 0px;">
+                <td style="border: 0px;">服务费：</td>
+                <td  style="border: 0px;">包含保险及其他费用</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p  style="text-align:center">注：我们可能会临时调整价格以保障服务能力。</p>
+</div>
+</body>
+</html>

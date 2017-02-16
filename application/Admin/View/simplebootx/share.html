@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"content="initial-scale=1.0,width=device-width,user-scalable=0;"/>
+<title>领取优惠券</title>
+<link href="__ROOT__/statics/simpleboot/css/bootstrap.css" type="text/css" rel="stylesheet">
+<!--[if lt IE 9]><style>.s-skin-wrap .s-skin-content .s-star-wrap .s-star-list .s-star-p1{zoom:.9996}.s-skin-wrap .s-skin-content .s-star-wrap .s-star-list .s-star-p2{zoom:.9692}.s-skin-wrap .s-skin-content .s-star-wrap .s-star-list .s-star-p3{zoom:.8743}.s-skin-wrap .s-skin-content .s-star-wrap .s-star-list .s-star-p4{zoom:.7509}.s-skin-wrap .s-skin-content .s-star-wrap .s-star-list .s-star-p5{zoom:.6463}.s-skin-wrap .s-skin-content .s-star-wrap .s-star-list .s-star-p6{zoom:.3004}.s-skin-wrap .s-skin-content .s-star-wrap .s-star-list .s-star-p7{zoom:.6308}.s-skin-wrap .s-skin-content .s-star-wrap .s-star-list .s-star-p8{zoom:.7257}.s-skin-wrap .s-skin-content .s-star-wrap .s-star-list .s-star-p9{zoom:.8491}.s-skin-wrap .s-skin-content .s-star-wrap .s-star-list .s-star-p10{zoom:.9537}</style><![endif]-->
+<style>
+	body {
+		background: url(__ROOT__/statics/images/bg.png) no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='__ROOT__/statics/images/bg.png', sizingMethod='scale');
+		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='__ROOT__/statics/images/bg.png', sizingMethod='scale')";
+		padding:0;
+		margin:0;
+		height:100%;
+		font-family:Arial, "Microsoft Yahei";
+	}
+.clearall{
+margin:0px;
+padding:0px;
+}
+</style>
+</head>
+<body   class="clearall" >
+<div class="section  clearall" style="text-align:center;">
+	<img src="__ROOT__/statics/images/hbbg.png" style="width:300px;height:30em;margin-top:3em;"/>
+	<p style="color:white;margin-top:-20em;line-height:2em;font-family:Microsoft YaHei;width:100%;">
+		<if condition="$info['user_login']">
+			我是{$info['user_login']}<br/>
+			<else/>
+			我是{$info['user_nicname']}<br/>
+			</if>
+
+		邀你体验城际快客APP<br/>
+		安全驾驶、让出行更安全
+	</p>
+	<div style="clear:both;"></div>
+ <div class="input-prepend">
+       <span class="btn" style="width:80px;background:#e3e3e3;font-size:0.96em;border-top-left-radius:0.3em;border-top-right-radius:0em;border-bottom-right-radius:0em;border-bottom-left-radius:0.3em;">手机号码</span>
+       <input  style="margin-left:-0.9em;width:120px;font-size:0.99em;margin-top: -0.3em; -webkit-appearance:none;outline:none;border-top-left-radius:0em;border-top-right-radius:0.3em;border-left:0px;border-right:0px;border-bottom:0px;border-top:0px;border-bottom-right-radius:0.3em;border-bottom-left-radius:0em;padding: 6px 12px;line-height: 1.42857143;" class="span2" id="mobile" type="text" placeholder="请输入手机号码">
+ </div>
+	<p style="color:white;line-height:2em;font-family:Microsoft YaHei;width:100%;font-size:1.5em;">
+		<span style="font-size:0.5em;color:#e3e3e3;">拆开即同意注册</span>城际快客	
+	</p>
+	<img src="__ROOT__/statics/images/getbtn.png" id="getBonus"/>
+	<p style="color:white;line-height:2em;font-family:Microsoft YaHei;width:100%;font-size:1em;"><a style="color:white;text-decoration: none;" target="_blank" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.union.framework.passengers">点击下载APP</a></p>
+</div>
+
+</body>
+<script src="__ROOT__/statics/js/jquery.js"></script>
+<script>
+	$("#getBonus").click(
+			function(){
+				if ($("#mobile").val() == "") {
+					alert("手机号码不能为空！");
+					$("#mobile").focus();
+					return false;
+				}
+				if (!$("#mobile").val().match(/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1})|(14[0-9]{1}))+\d{8})$/)) {
+					alert("手机号码格式不正确！");
+					$("#mobile").focus();
+					return false;
+				}
+					var id={$_GET['id']};
+					var phone=$("#mobile").val();
+					$.ajax( {
+						url:'{:u('app/doshare')}',
+						data:{id:id,phone:phone},
+						type:'post',
+					    dataType:'json',
+						success:function(data) {
+							alert(data.info);
+							window.location.href=data.url;
+						},
+						error : function() {
+						}
+				});
+			}
+	);
+</script>
+</html>
