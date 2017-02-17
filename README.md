@@ -1,2 +1,3 @@
  这是一个基于ThinkCMF的简单框架
  使用PHPStudy的集成环境
+测试
